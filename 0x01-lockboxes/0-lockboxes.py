@@ -15,7 +15,7 @@ def canUnlockAll(boxes):
     while stack:
         j = stack.pop()
         for index in boxes[j]:
-            if index > 0 and index < lenght and opened_box[index] == 0:
+            if index > 0 and index < length and opened_box[index] == 0:
                 opened_box[index] = 1
                 stack.append(index)
         i = i + 1
