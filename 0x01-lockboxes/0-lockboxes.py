@@ -1,32 +1,24 @@
 #!/usr/bin/python
 """LockBoxes Task"""
 
-
 def canUnlockAll(boxes):
-    """checks if boxes can be opened
-    Returns:
-        True: if all boxes open
-        False: otherwise
+    """
+    Returns: True if boxes can open otherwise False
     """
     length = len(boxes)
-    keys = set()
-    openedBoxes = []
+    stack = [0]
+    opened_box = [1] + [0] * (length - 1)
     i = 0
 
-    while i < length:
-        newPos = i
-        openedBoxes.append(i)
-        keys.update(boxes[i])
-        for key in keys:
-            if key != 0 and key < length and key not in openedBoxes:
-                i = key
-                break
-        if newPos != i:
-            continue
-        else:
-            break
-
-    for i in range(length):
-        if i not in openedBoxes and i != 0:
-            return False
+    if length == 0:
+        return True
+    while stack:
+        j = stack.pop()
+        for index in boxes[j]:
+            if index > 0 and index < lenght and opened_box[index] == 0:
+                opened_box[index] = 1
+                stack.append(index)
+        i = i + 1
+    if 0 in opened_box:
+        return False
     return True
