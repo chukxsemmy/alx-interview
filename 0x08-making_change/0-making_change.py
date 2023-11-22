@@ -1,22 +1,12 @@
 #!/usr/bin/python3
 """
-Given a pile of coins of different values, determine the
-fewest number of coins needed to meet a given amount total.
+Task: Change comes from within.
 """
 
 
 def makeChange(coins, total):
     """
-    Determines the fewest coins to meet total
-
-    Args:
-        coins (list): list of coins
-        total (int): value to meet as total
-
-    Returns:
-        coins (int): fewest number of coins needed to meet total
-        (0) if total is 0 or less
-        (-1) if no number of the coins can meet the total
+    Determines the fewest coins to meet a given amount
     """
     if total <= 0:
         return 0
